@@ -1,0 +1,14 @@
+D:\Projects\Automat2\Automat2\obj\Debug\net8.0\Automat2.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Automat2\Automat2\obj\Debug\net8.0\Automat2.AssemblyInfoInputs.cache
+D:\Projects\Automat2\Automat2\obj\Debug\net8.0\Automat2.AssemblyInfo.cs
+D:\Projects\Automat2\Automat2\obj\Debug\net8.0\Automat2.csproj.CoreCompileInputs.cache
+D:\Projects\Automat2\Automat2\bin\Debug\net8.0\Automat2.exe
+D:\Projects\Automat2\Automat2\bin\Debug\net8.0\Automat2.deps.json
+D:\Projects\Automat2\Automat2\bin\Debug\net8.0\Automat2.runtimeconfig.json
+D:\Projects\Automat2\Automat2\bin\Debug\net8.0\Automat2.dll
+D:\Projects\Automat2\Automat2\bin\Debug\net8.0\Automat2.pdb
+D:\Projects\Automat2\Automat2\obj\Debug\net8.0\Automat2.dll
+D:\Projects\Automat2\Automat2\obj\Debug\net8.0\refint\Automat2.dll
+D:\Projects\Automat2\Automat2\obj\Debug\net8.0\Automat2.pdb
+D:\Projects\Automat2\Automat2\obj\Debug\net8.0\Automat2.genruntimeconfig.cache
+D:\Projects\Automat2\Automat2\obj\Debug\net8.0\ref\Automat2.dll
