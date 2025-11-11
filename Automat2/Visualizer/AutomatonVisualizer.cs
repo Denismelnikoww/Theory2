@@ -2,10 +2,10 @@
 
 public class AutomatonVisualizer
 {
-    public void RenderSteps(Automaton automaton, string outputDir = "automaton_steps")
+    private readonly string outputDir = "automaton_steps";
+    public void RenderSteps(Automaton automaton, string name = null, bool deleteDirectory = true)
     {
-        // Очищаем папку перед началом
-        if (Directory.Exists(outputDir))
+        if (deleteDirectory && Directory.Exists(outputDir))
         {
             Directory.Delete(outputDir, true);
         }
@@ -14,10 +14,10 @@ public class AutomatonVisualizer
         for (int i = 0; i < automaton.StepHistory.Count; i++)
         {
             var step = automaton.StepHistory[i];
-            var dotPath = Path.Combine(outputDir, $"step_{i:D3}.dot");
-            var pngPath = Path.Combine(outputDir, $"step_{i:D3}.png");
+            var dotPath = Path.Combine(outputDir, (name ?? $"step_{i:D3}") + ".dot");
+            var pngPath = Path.Combine(outputDir, (name ?? $"step_{i:D3}") + ".png");
 
-            SaveToDot(step, automaton, dotPath, i);
+            SaveToDot(step, dotPath, i);
 
             GeneratePngFromDot(dotPath, pngPath);
 
@@ -27,7 +27,7 @@ public class AutomatonVisualizer
         OpenOutputFolder(outputDir);
     }
 
-    private void SaveToDot(StepSnapshot step, Automaton automaton, string filePath, int stepNumber)
+    private void SaveToDot(StepSnapshot step, string filePath, int stepNumber)
     {
         using (var writer = new StreamWriter(filePath))
         {
@@ -38,14 +38,25 @@ public class AutomatonVisualizer
             writer.WriteLine($"  labelloc=\"t\";");
             writer.WriteLine($"  label=\"Шаг {stepNumber}: {step.Comment}\";");
 
-            // Специальные стили для начального и конечного состояний
-            writer.WriteLine($"  {automaton.Start.Name} [label=\"start\", shape=doublecircle, style=bold, color=blue];");
-            writer.WriteLine($"  {automaton.Final.Name} [label=\"final\", shape=doublecircle, peripheries=2, style=bold, color=red];");
+            // Находим начальный и конечный узлы в snapshot по ИМЕНАМ из StepSnapshot
+            var startNodeInStep = step.Nodes.FirstOrDefault(n => n.Name == step.StartStateName);
+            var finalNodeInStep = step.Nodes.FirstOrDefault(n => n.Name == step.FinalStateName);
 
-            // Обычные узлы
+            // Специальные стили для начального и конечного состояний
+            if (startNodeInStep != null)
+            {
+                writer.WriteLine($"  {startNodeInStep.Name} [label=\"{startNodeInStep.Name}\", shape=doublecircle, style=bold, color=blue];");
+            }
+
+            if (finalNodeInStep != null)
+            {
+                writer.WriteLine($"  {finalNodeInStep.Name} [label=\"{finalNodeInStep.Name}\", shape=doublecircle, peripheries=2, style=bold, color=red];");
+            }
+
+            // Обычные узлы (которые не являются начальными или конечными)
             foreach (var node in step.Nodes)
             {
-                if (node.Id != automaton.Start.Id && node.Id != automaton.Final.Id)
+                if (node != startNodeInStep && node != finalNodeInStep)
                 {
                     writer.WriteLine($"  {node.Name} [label=\"{node.Name}\", shape=circle];");
                 }

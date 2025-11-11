@@ -25,6 +25,7 @@
         foreach (var node in Nodes)
         {
             var copiedNode = new Node(node.Id);
+            copiedNode.Name = node.Name; // Сохраняем имя!
             nodeMap[node.Id] = copiedNode;
             copiedNodes.Add(copiedNode);
         }
@@ -42,7 +43,8 @@
             }
         }
 
-        var snapshot = new StepSnapshot(_stepCounter++, copiedNodes, comment);
+        // Передаем имена начального и конечного состояний
+        var snapshot = new StepSnapshot(_stepCounter++, copiedNodes, comment, Start?.Name, Final?.Name);
         StepHistory.Add(snapshot);
     }
 }

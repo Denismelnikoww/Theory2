@@ -3,15 +3,15 @@ using Automat2.Input;
 
 namespace Automat2
 {
-    class Program
+    partial class Program
     {
         //static void Main(string[] args)
         //{
-        //var builder = new AutomatonBuilder();
-        //var automaton = builder.Build("a* + (a+b*)^ a + (ab)^");
+        //    var builder = new AutomatonBuilder();
+        //    var automaton = builder.Build("a* + (a+b*)^ a + (ab)^");
 
-        //var visualizer = new AutomatonVisualizer();
-        //visualizer.RenderSteps(automaton);
+        //    var visualizer = new AutomatonVisualizer();
+        //    visualizer.RenderSteps(automaton);
         //}
 
         static void Main(string[] args)
@@ -19,6 +19,9 @@ namespace Automat2
             var consoleHelper = new ConsoleHelper();
             var matrixInput = new MatrixInputHelper(consoleHelper);
             var converter = new AutomatonConverter();
+            var determinizer = new AutomatonDeterminizer(consoleHelper);
+            var visualizer = new AutomatonVisualizer();
+
 
             Automaton automaton = new();
 
@@ -34,22 +37,44 @@ namespace Automat2
                     converter.DisplayConversionInfo(automatonInput, automaton);
                     consoleHelper.Pause();
 
-                    var visualizer = new AutomatonVisualizer();
                     visualizer.RenderSteps(automaton);
                 },
-                ["Мой вариант"] = () =>
+                ["Детерминизировать автомат"] = () =>
                 {
                     var input = CreateAutomatonInput();
                     matrixInput.DisplayAutomatonInfo(input);
+                    visualizer.RenderSteps(
+                        converter.ConvertToAutomaton(input),
+                        "start");
                     consoleHelper.Pause();
 
-                    automaton = converter.ConvertToAutomaton(input);
-                    converter.DisplayConversionInfo(input, automaton);
+                    var automatonWithoutEpsilon = determinizer.RemoveEpsilonTransitions(input, determinizer.BuildEpsilonClosures(input));
+                    visualizer.RenderSteps(
+                        converter.ConvertToAutomaton(automatonWithoutEpsilon),
+                        "automatonWithoutEpsilon",
+                        deleteDirectory: false);
                     consoleHelper.Pause();
 
-                    var visualizer = new AutomatonVisualizer();
-                    visualizer.RenderSteps(automaton);
-                }
+                    var determinizedAutomaton = determinizer.Determinize(automatonWithoutEpsilon);
+                    visualizer.RenderSteps(
+                        converter.ConvertToAutomaton(determinizedAutomaton),
+                        "determinized",
+                        deleteDirectory: false);
+                    consoleHelper.Pause();
+
+                },
+                ["Мой вариант"] = () =>
+                    {
+                        var input = CreateAutomatonInput();
+                        matrixInput.DisplayAutomatonInfo(input);
+                        consoleHelper.Pause();
+
+                        automaton = converter.ConvertToAutomaton(input);
+                        converter.DisplayConversionInfo(input, automaton);
+                        consoleHelper.Pause();
+
+                        visualizer.RenderSteps(automaton);
+                    }
             };
 
             consoleHelper.Menu(menu, "ГЛАВНОЕ МЕНЮ - ТЕОРИЯ АВТОМАТОВ");

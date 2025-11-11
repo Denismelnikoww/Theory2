@@ -68,9 +68,5 @@ public class AutomatonConverter
 
         console.WriteColoredLine($"\nВсего узлов: {automaton.Nodes.Count}", console.SuccessColor);
         console.WriteColoredLine($"Всего переходов: {automaton.Nodes.Sum(n => n.Transitions.Count)}", console.SuccessColor);
-
-        // Отладочная информация
-        console.WriteColoredLine($"\n[Отладка] ID начального: {automaton.Start.Id}, ID финального: {automaton.Final.Id}", console.TextColor);
-        console.WriteColoredLine($"[Отладка] Все узлы: {string.Join(", ", automaton.Nodes.Select(n => $"{n.Name}(id:{n.Id})"))}", console.TextColor);
     }
 }
