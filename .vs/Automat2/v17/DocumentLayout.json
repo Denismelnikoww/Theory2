@@ -50,7 +50,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -81,10 +81,6 @@
               "Name": "ST:6:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "AutomatonDeterminizer.cs",
@@ -92,7 +88,7 @@
               "RelativeDocumentMoniker": "Automat2\\AutomatonDeterminizer.cs",
               "ToolTip": "D:\\Projects\\Automat2\\Automat2\\AutomatonDeterminizer.cs",
               "RelativeToolTip": "Automat2\\AutomatonDeterminizer.cs",
-              "ViewState": "AgIAAO8AAAAAAAAAAAA5wAgBAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAO8AAAAAAAAAAAA5wAQBAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-11T20:15:17.292Z",
               "EditorCaption": ""
@@ -107,8 +103,7 @@
               "RelativeToolTip": "Automat2\\Input\\AutomatonConverter.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T18:29:03.664Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-11T18:29:03.664Z"
             },
             {
               "$type": "Document",
@@ -120,8 +115,7 @@
               "RelativeToolTip": "Automat2\\Input\\AutomatonInput.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T18:14:03.246Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-11T18:14:03.246Z"
             },
             {
               "$type": "Document",
@@ -133,8 +127,7 @@
               "RelativeToolTip": "Automat2\\Visualizer\\AutomatonVisualizer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T14:38:29.045Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-09T14:38:29.045Z"
             },
             {
               "$type": "Document",
@@ -146,8 +139,7 @@
               "RelativeToolTip": "Automat2\\Automaton\\Automaton.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAmwDAAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T14:23:52.495Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-09T14:23:52.495Z"
             },
             {
               "$type": "Document",
@@ -159,8 +151,7 @@
               "RelativeToolTip": "Automat2\\Program.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAA1wDIAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T14:21:35.439Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-09T14:21:35.439Z"
             },
             {
               "$type": "Document",
@@ -172,8 +163,7 @@
               "RelativeToolTip": "Automat2\\Automaton\\Node.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwBAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T18:36:46.576Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-09T18:36:46.576Z"
             },
             {
               "$type": "Document",
@@ -197,8 +187,7 @@
               "RelativeToolTip": "Automat2\\Visualizer\\StepSnapshot.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T14:33:47.89Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-09T14:33:47.89Z"
             },
             {
               "$type": "Document",
@@ -211,6 +200,10 @@
               "ViewState": "AgIAAFsAAAAAAAAAAAAswF4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-09T14:23:44.635Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             }
           ]
         }
