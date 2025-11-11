@@ -10,7 +10,7 @@
     {
         StepNumber = stepNumber;
         Nodes = nodes;
-        Comment = comment;
+        Comment = comment.Replace("q0","Start").Replace("q1","Final");
 
         // Находим начальное и конечное состояния (q0 и последний созданный)
         Start = nodes.FirstOrDefault(n => n.Id == 0);

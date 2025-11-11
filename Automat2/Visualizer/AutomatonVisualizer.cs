@@ -4,10 +4,12 @@ public class AutomatonVisualizer
 {
     public void RenderSteps(Automaton automaton, string outputDir = "automaton_steps")
     {
-        if (!Directory.Exists(outputDir))
+        // Очищаем папку перед началом
+        if (Directory.Exists(outputDir))
         {
-            Directory.CreateDirectory(outputDir);
+            Directory.Delete(outputDir, true);
         }
+        Directory.CreateDirectory(outputDir);
 
         for (int i = 0; i < automaton.StepHistory.Count; i++)
         {
@@ -15,22 +17,26 @@ public class AutomatonVisualizer
             var dotPath = Path.Combine(outputDir, $"step_{i:D3}.dot");
             var pngPath = Path.Combine(outputDir, $"step_{i:D3}.png");
 
-            SaveToDot(step, automaton, dotPath);
+            SaveToDot(step, automaton, dotPath, i);
 
             GeneratePngFromDot(dotPath, pngPath);
 
             Console.WriteLine($"Шаг {i}: {step.Comment}");
         }
+
         OpenOutputFolder(outputDir);
     }
 
-    private void SaveToDot(StepSnapshot step, Automaton automaton, string filePath)
+    private void SaveToDot(StepSnapshot step, Automaton automaton, string filePath, int stepNumber)
     {
         using (var writer = new StreamWriter(filePath))
         {
             writer.WriteLine("digraph G {");
             writer.WriteLine("  rankdir=LR;");
             writer.WriteLine("  node [shape = circle];");
+
+            writer.WriteLine($"  labelloc=\"t\";");
+            writer.WriteLine($"  label=\"Шаг {stepNumber}: {step.Comment}\";");
 
             // Специальные стили для начального и конечного состояний
             writer.WriteLine($"  {automaton.Start.Name} [label=\"start\", shape=doublecircle, style=bold, color=blue];");

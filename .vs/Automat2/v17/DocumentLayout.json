@@ -3,28 +3,40 @@
   "WorkspaceRootPath": "D:\\Projects\\Automat2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\automatonbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\automatonbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\input\\automatonconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\input\\automatonconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\input\\automatoninput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\input\\automatoninput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\visualizer\\automatonvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\visualizer\\automatonvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\input\\matrixinputhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\input\\matrixinputhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\automatonvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\automatonvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\automaton\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\automaton\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\automaton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\automaton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\automaton\\automaton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\automaton\\automaton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\visualizer\\stepsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\visualizer\\stepsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\stepsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\stepsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\automaton\\automatonbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\automaton\\automatonbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -65,86 +77,124 @@
               "Name": "ST:6:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AutomatonConverter.cs",
+              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\Input\\AutomatonConverter.cs",
+              "RelativeDocumentMoniker": "Automat2\\Input\\AutomatonConverter.cs",
+              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\Input\\AutomatonConverter.cs",
+              "RelativeToolTip": "Automat2\\Input\\AutomatonConverter.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAAAEsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T18:29:03.664Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Node.cs",
-              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\Node.cs",
-              "RelativeDocumentMoniker": "Automat2\\Node.cs",
-              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\Node.cs",
-              "RelativeToolTip": "Automat2\\Node.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAAPAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "MatrixInputHelper.cs",
+              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\Input\\MatrixInputHelper.cs",
+              "RelativeDocumentMoniker": "Automat2\\Input\\MatrixInputHelper.cs",
+              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\Input\\MatrixInputHelper.cs",
+              "RelativeToolTip": "Automat2\\Input\\MatrixInputHelper.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAqwHMAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T18:36:46.576Z",
+              "WhenOpened": "2025-11-11T18:14:10.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AutomatonInput.cs",
+              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\Input\\AutomatonInput.cs",
+              "RelativeDocumentMoniker": "Automat2\\Input\\AutomatonInput.cs",
+              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\Input\\AutomatonInput.cs",
+              "RelativeToolTip": "Automat2\\Input\\AutomatonInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAACTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-11T18:14:03.246Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "AutomatonVisualizer.cs",
-              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\AutomatonVisualizer.cs",
-              "RelativeDocumentMoniker": "Automat2\\AutomatonVisualizer.cs",
-              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\AutomatonVisualizer.cs",
-              "RelativeToolTip": "Automat2\\AutomatonVisualizer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAQAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\Visualizer\\AutomatonVisualizer.cs",
+              "RelativeDocumentMoniker": "Automat2\\Visualizer\\AutomatonVisualizer.cs",
+              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\Visualizer\\AutomatonVisualizer.cs",
+              "RelativeToolTip": "Automat2\\Visualizer\\AutomatonVisualizer.cs",
+              "ViewState": "AgIAAGAAAAAAAAAAAAA9wG4AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-09T14:38:29.045Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "StepSnapshot.cs",
-              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\StepSnapshot.cs",
-              "RelativeDocumentMoniker": "Automat2\\StepSnapshot.cs",
-              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\StepSnapshot.cs",
-              "RelativeToolTip": "Automat2\\StepSnapshot.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAIBBwA4AAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T14:33:47.89Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Automaton.cs",
-              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\Automaton.cs",
-              "RelativeDocumentMoniker": "Automat2\\Automaton.cs",
-              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\Automaton.cs",
-              "RelativeToolTip": "Automat2\\Automaton.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAArAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\Automaton\\Automaton.cs",
+              "RelativeDocumentMoniker": "Automat2\\Automaton\\Automaton.cs",
+              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\Automaton\\Automaton.cs",
+              "RelativeToolTip": "Automat2\\Automaton\\Automaton.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAADwvyoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-09T14:23:52.495Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AutomatonBuilder.cs",
-              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\AutomatonBuilder.cs",
-              "RelativeDocumentMoniker": "Automat2\\AutomatonBuilder.cs",
-              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\AutomatonBuilder.cs",
-              "RelativeToolTip": "Automat2\\AutomatonBuilder.cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAADwv20AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T14:23:44.635Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\Program.cs",
               "RelativeDocumentMoniker": "Automat2\\Program.cs",
               "ToolTip": "D:\\Projects\\Automat2\\Automat2\\Program.cs",
               "RelativeToolTip": "Automat2\\Program.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAA7wBAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADgAAAAAAAAAAAAqwFEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-09T14:21:35.439Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StepSnapshot.cs",
+              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\Visualizer\\StepSnapshot.cs",
+              "RelativeDocumentMoniker": "Automat2\\Visualizer\\StepSnapshot.cs",
+              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\Visualizer\\StepSnapshot.cs",
+              "RelativeToolTip": "Automat2\\Visualizer\\StepSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T14:33:47.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Node.cs",
+              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\Automaton\\Node.cs",
+              "RelativeDocumentMoniker": "Automat2\\Automaton\\Node.cs",
+              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\Automaton\\Node.cs",
+              "RelativeToolTip": "Automat2\\Automaton\\Node.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T18:36:46.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AutomatonBuilder.cs",
+              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\Automaton\\AutomatonBuilder.cs",
+              "RelativeDocumentMoniker": "Automat2\\Automaton\\AutomatonBuilder.cs",
+              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\Automaton\\AutomatonBuilder.cs",
+              "RelativeToolTip": "Automat2\\Automaton\\AutomatonBuilder.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAswF4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T14:23:44.635Z"
             }
           ]
         }
