@@ -1,45 +1,41 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Projects\\Automat2\\",
+  "WorkspaceRootPath": "C:\\Users\\Denis\\source\\repos\\Theory2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\automatondeterminizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|c:\\users\\denis\\source\\repos\\theory2\\automat2\\automatondeterminizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\automatondeterminizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|c:\\users\\denis\\source\\repos\\theory2\\automat2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\input\\automatonconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|c:\\users\\denis\\source\\repos\\theory2\\automat2\\input\\automatonconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\input\\automatonconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\visualizer\\automatonvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|c:\\users\\denis\\source\\repos\\theory2\\automat2\\visualizer\\automatonvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\visualizer\\automatonvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\input\\automatoninput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\input\\automatoninput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\automaton\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|c:\\users\\denis\\source\\repos\\theory2\\automat2\\automaton\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\automaton\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\automaton\\automaton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|c:\\users\\denis\\source\\repos\\theory2\\automat2\\automaton\\automaton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\automaton\\automaton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\visualizer\\stepsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|c:\\users\\denis\\source\\repos\\theory2\\automat2\\visualizer\\stepsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\visualizer\\stepsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\input\\matrixinputhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|c:\\users\\denis\\source\\repos\\theory2\\automat2\\input\\matrixinputhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\input\\matrixinputhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|d:\\projects\\automat2\\automat2\\automaton\\automatonbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|c:\\users\\denis\\source\\repos\\theory2\\automat2\\automaton\\automatonbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3543C93D-69AE-4EF8-B1AC-C7358D0D5A52}|Automat2\\Automat2.csproj|solutionrelative:automat2\\automaton\\automatonbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -50,15 +46,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Bookmark",
@@ -66,19 +62,7 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:3:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:4:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:5:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:6:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Bookmark",
@@ -88,11 +72,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "AutomatonDeterminizer.cs",
-              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\AutomatonDeterminizer.cs",
+              "DocumentMoniker": "C:\\Users\\Denis\\source\\repos\\Theory2\\Automat2\\AutomatonDeterminizer.cs",
               "RelativeDocumentMoniker": "Automat2\\AutomatonDeterminizer.cs",
-              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\AutomatonDeterminizer.cs",
+              "ToolTip": "C:\\Users\\Denis\\source\\repos\\Theory2\\Automat2\\AutomatonDeterminizer.cs",
               "RelativeToolTip": "Automat2\\AutomatonDeterminizer.cs",
-              "ViewState": "AgIAAO8AAAAAAAAAAAA5wAgBAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAMcAAAAAAAAAAAAAANAAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-11T20:15:17.292Z",
               "EditorCaption": ""
@@ -101,87 +85,70 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "AutomatonConverter.cs",
-              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\Input\\AutomatonConverter.cs",
+              "DocumentMoniker": "C:\\Users\\Denis\\source\\repos\\Theory2\\Automat2\\Input\\AutomatonConverter.cs",
               "RelativeDocumentMoniker": "Automat2\\Input\\AutomatonConverter.cs",
-              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\Input\\AutomatonConverter.cs",
+              "ToolTip": "C:\\Users\\Denis\\source\\repos\\Theory2\\Automat2\\Input\\AutomatonConverter.cs",
               "RelativeToolTip": "Automat2\\Input\\AutomatonConverter.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T18:29:03.664Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AutomatonInput.cs",
-              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\Input\\AutomatonInput.cs",
-              "RelativeDocumentMoniker": "Automat2\\Input\\AutomatonInput.cs",
-              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\Input\\AutomatonInput.cs",
-              "RelativeToolTip": "Automat2\\Input\\AutomatonInput.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T18:14:03.246Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AutomatonVisualizer.cs",
-              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\Visualizer\\AutomatonVisualizer.cs",
-              "RelativeDocumentMoniker": "Automat2\\Visualizer\\AutomatonVisualizer.cs",
-              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\Visualizer\\AutomatonVisualizer.cs",
-              "RelativeToolTip": "Automat2\\Visualizer\\AutomatonVisualizer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T14:38:29.045Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Automaton.cs",
-              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\Automaton\\Automaton.cs",
-              "RelativeDocumentMoniker": "Automat2\\Automaton\\Automaton.cs",
-              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\Automaton\\Automaton.cs",
-              "RelativeToolTip": "Automat2\\Automaton\\Automaton.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAmwDAAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T14:23:52.495Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-11T18:29:03.664Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Denis\\source\\repos\\Theory2\\Automat2\\Program.cs",
               "RelativeDocumentMoniker": "Automat2\\Program.cs",
-              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\Program.cs",
+              "ToolTip": "C:\\Users\\Denis\\source\\repos\\Theory2\\Automat2\\Program.cs",
               "RelativeToolTip": "Automat2\\Program.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAA1wDIAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAowDIAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-09T14:21:35.439Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Node.cs",
-              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\Automaton\\Node.cs",
-              "RelativeDocumentMoniker": "Automat2\\Automaton\\Node.cs",
-              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\Automaton\\Node.cs",
-              "RelativeToolTip": "Automat2\\Automaton\\Node.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBAAAAABAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "AutomatonVisualizer.cs",
+              "DocumentMoniker": "C:\\Users\\Denis\\source\\repos\\Theory2\\Automat2\\Visualizer\\AutomatonVisualizer.cs",
+              "RelativeDocumentMoniker": "Automat2\\Visualizer\\AutomatonVisualizer.cs",
+              "ToolTip": "C:\\Users\\Denis\\source\\repos\\Theory2\\Automat2\\Visualizer\\AutomatonVisualizer.cs",
+              "RelativeToolTip": "Automat2\\Visualizer\\AutomatonVisualizer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T18:36:46.576Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-09T14:38:29.045Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
+              "Title": "Automaton.cs",
+              "DocumentMoniker": "C:\\Users\\Denis\\source\\repos\\Theory2\\Automat2\\Automaton\\Automaton.cs",
+              "RelativeDocumentMoniker": "Automat2\\Automaton\\Automaton.cs",
+              "ToolTip": "C:\\Users\\Denis\\source\\repos\\Theory2\\Automat2\\Automaton\\Automaton.cs",
+              "RelativeToolTip": "Automat2\\Automaton\\Automaton.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAmwDAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T14:23:52.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Node.cs",
+              "DocumentMoniker": "C:\\Users\\Denis\\source\\repos\\Theory2\\Automat2\\Automaton\\Node.cs",
+              "RelativeDocumentMoniker": "Automat2\\Automaton\\Node.cs",
+              "ToolTip": "C:\\Users\\Denis\\source\\repos\\Theory2\\Automat2\\Automaton\\Node.cs",
+              "RelativeToolTip": "Automat2\\Automaton\\Node.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-09T18:36:46.576Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "MatrixInputHelper.cs",
-              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\Input\\MatrixInputHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Denis\\source\\repos\\Theory2\\Automat2\\Input\\MatrixInputHelper.cs",
               "RelativeDocumentMoniker": "Automat2\\Input\\MatrixInputHelper.cs",
-              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\Input\\MatrixInputHelper.cs",
+              "ToolTip": "C:\\Users\\Denis\\source\\repos\\Theory2\\Automat2\\Input\\MatrixInputHelper.cs",
               "RelativeToolTip": "Automat2\\Input\\MatrixInputHelper.cs",
               "ViewState": "AgIAAGcAAAAAAAAAAAAqwHMAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -189,24 +156,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "StepSnapshot.cs",
-              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\Visualizer\\StepSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\Denis\\source\\repos\\Theory2\\Automat2\\Visualizer\\StepSnapshot.cs",
               "RelativeDocumentMoniker": "Automat2\\Visualizer\\StepSnapshot.cs",
-              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\Visualizer\\StepSnapshot.cs",
+              "ToolTip": "C:\\Users\\Denis\\source\\repos\\Theory2\\Automat2\\Visualizer\\StepSnapshot.cs",
               "RelativeToolTip": "Automat2\\Visualizer\\StepSnapshot.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-09T14:33:47.89Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-09T14:33:47.89Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "AutomatonBuilder.cs",
-              "DocumentMoniker": "D:\\Projects\\Automat2\\Automat2\\Automaton\\AutomatonBuilder.cs",
+              "DocumentMoniker": "C:\\Users\\Denis\\source\\repos\\Theory2\\Automat2\\Automaton\\AutomatonBuilder.cs",
               "RelativeDocumentMoniker": "Automat2\\Automaton\\AutomatonBuilder.cs",
-              "ToolTip": "D:\\Projects\\Automat2\\Automat2\\Automaton\\AutomatonBuilder.cs",
+              "ToolTip": "C:\\Users\\Denis\\source\\repos\\Theory2\\Automat2\\Automaton\\AutomatonBuilder.cs",
               "RelativeToolTip": "Automat2\\Automaton\\AutomatonBuilder.cs",
               "ViewState": "AgIAAFsAAAAAAAAAAAAswF4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

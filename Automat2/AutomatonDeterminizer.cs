@@ -142,14 +142,16 @@ namespace Automat2
 
                 var determinized = new AutomatonInput
                 {
-                    Inputs = validInputs, // Используем только валидные сигналы
+                    Inputs = validInputs,
                     Transitions = new Dictionary<(string, string), List<string>>()
                 };
 
                 // Начальное состояние - множество из исходного начального состояния
                 var initialState = new HashSet<string> { automaton.States[0] };
+
+                // Используем HashSet с компаратором для сравнения по содержимому
                 var stateSets = new Dictionary<string, HashSet<string>>();
-                var stateNames = new Dictionary<HashSet<string>, string>();
+                var stateNames = new Dictionary<HashSet<string>, string>(HashSet<string>.CreateSetComparer());
 
                 // Генерируем имена состояний в алфавитном порядке
                 char currentChar = 'A';
@@ -198,7 +200,7 @@ namespace Automat2
                             determinized.Transitions[(currentStateName, input)] = new List<string> { nextStateName };
 
                             // Если это новое множество, добавляем в очередь для обработки
-                            if (!stateNames.ContainsKey(nextSet))
+                            if (!determinized.Transitions.TryGetValue((nextStateName, input),out var strings))
                             {
                                 queue.Enqueue(nextSet);
                             }
@@ -214,14 +216,13 @@ namespace Automat2
                 // Определяем начальное и конечные состояния
                 determinized.States = determinized.States.OrderBy(s => s).ToList();
 
-
                 _console.WriteColoredLine("=== ДЕТЕРМЕНИЗИРОВАННЫЙ АВТОМАТ ===", _console.HighlightColor);
                 DisplayTransitionTable(determinized);
                 DisplayStateSets(stateSets);
 
-
                 return determinized;
             }
+
             private void DisplayTransitionTable(AutomatonInput automaton)
             {
                 _console.WriteColoredLine("Таблица переходов:", _console.TextColor);
