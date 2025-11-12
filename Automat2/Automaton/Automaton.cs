@@ -15,11 +15,9 @@
 
     public void AddStep(string comment)
     {
-        // Создаем глубокую копию всех узлов и их переходов
         var copiedNodes = new List<Node>();
         var nodeMap = new Dictionary<int, Node>();
 
-        // Сначала создаем копии всех узлов
         foreach (var node in Nodes)
         {
             var copiedNode = new Node(node.Id);
@@ -30,7 +28,6 @@
             copiedNodes.Add(copiedNode);
         }
 
-        // Затем копируем переходы
         foreach (var node in Nodes)
         {
             var copiedNode = nodeMap[node.Id];
@@ -43,7 +40,6 @@
             }
         }
 
-        // Передаем имена начального и конечного состояний
         var snapshot = new StepSnapshot(_stepCounter++, copiedNodes, comment);
         StepHistory.Add(snapshot);
     }
@@ -61,7 +57,6 @@
         Console.WriteLine($"Обработка входной строки: '{input}'");
         AddStep($"Начало обработки строки: '{input}'");
 
-        // Используем первое начальное состояние как стартовое
         Node currentState = startNodes[0];
         int position = 0;
 
@@ -71,10 +66,8 @@
 
             bool transitionFound = false;
 
-            // Ищем переход по текущему символу
             foreach (var (nextState, transitionExpr) in currentState.Transitions)
             {
-                // Проверяем, подходит ли символ под выражение перехода
                 if (MatchesTransition(symbol.ToString(), transitionExpr))
                 {
                     Console.WriteLine($"  Переход в состояние '{nextState.Name}' по выражению '{transitionExpr}'");
@@ -96,7 +89,6 @@
             position++;
         }
 
-        // Проверяем, находимся ли в финальном состоянии после обработки всей строки
         bool accepted = finalNodes.Contains(currentState);
 
         Console.WriteLine($"Результат: строка {(accepted ? "ПРИНЯТА" : "ОТВЕРГНУТА")}");
@@ -130,18 +122,15 @@
 
     private bool MatchesTransition(string input, string transitionExpr)
     {
-        // Простая реализация - проверка точного совпадения
-        // Можно расширить для поддержки регулярных выражений или специальных символов
-        if (transitionExpr == "ε" || transitionExpr == "epsilon") // epsilon-переход
+        if (transitionExpr == "ε" || transitionExpr == "epsilon") 
             return true;
 
-        if (transitionExpr == ".") // любой символ
+        if (transitionExpr == ".") 
             return true;
 
-        if (transitionExpr.Length == 1) // одиночный символ
+        if (transitionExpr.Length == 1) 
             return input == transitionExpr;
 
-        // Проверка на диапазон [a-z]
         if (transitionExpr.StartsWith("[") && transitionExpr.EndsWith("]") && transitionExpr.Contains("-"))
         {
             string range = transitionExpr.Substring(1, transitionExpr.Length - 2);
@@ -155,7 +144,6 @@
             }
         }
 
-        // Проверка на множество символов {abc}
         if (transitionExpr.StartsWith("{") && transitionExpr.EndsWith("}"))
         {
             string set = transitionExpr.Substring(1, transitionExpr.Length - 2);
@@ -163,23 +151,5 @@
         }
 
         return input == transitionExpr;
-    }
-    
-    public Node Start
-    {
-        get { return Nodes.FirstOrDefault(n => n.IsStart); }
-        set
-        {
-            value.IsStart = true;
-        }
-    }
-
-    public Node Final
-    {
-        get { return Nodes.FirstOrDefault(n => n.IsFinal); }
-        set
-        {
-            value.IsFinal = true;
-        }
     }
 }

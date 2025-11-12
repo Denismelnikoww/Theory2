@@ -12,7 +12,6 @@ namespace Automat2
             _console = consoleHelper;
         }
 
-        // Шаг 1: Построение ε-замыканий для всех состояний
         public Dictionary<string, HashSet<string>> BuildEpsilonClosures(AutomatonInput automaton)
         {
             var closures = new Dictionary<string, HashSet<string>>();
@@ -58,23 +57,18 @@ namespace Automat2
             return closure;
         }
 
-
-        // Шаг 2: Построение автомата без ε-переходов с переименованием вершин
-        // Шаг 2: Построение автомата без ε-переходов с переименованием вершин
         public AutomatonInput RemoveEpsilonTransitions(AutomatonInput automaton, Dictionary<string, HashSet<string>> closures)
         {
-            // Убираем ε из входных сигналов
             var validInputs = automaton.Inputs.Where(s => s != "e").ToList();
 
             var newAutomaton = new AutomatonInput
             {
-                Inputs = validInputs, // Только валидные сигналы
+                Inputs = validInputs, 
                 Transitions = new Dictionary<(string, string), List<string>>(),
                 IndexesStarts = new List<int>(),
                 IndexesFinals = new List<int>()
             };
 
-            // Переименовываем состояния в S0, S1, S2, ...
             var stateRenaming = new Dictionary<string, string>();
             for (int i = 0; i < automaton.States.Count; i++)
             {
@@ -82,13 +76,11 @@ namespace Automat2
                 newAutomaton.States.Add($"S{i}");
             }
 
-            // Определяем начальные и конечные состояния для нового автомата
             for (int i = 0; i < newAutomaton.States.Count; i++)
             {
                 var originalState = automaton.States[i];
                 var newStateName = newAutomaton.States[i];
 
-                // Если исходное состояние было начальным, то новое тоже начальное
                 if (automaton.IndexesStarts.Contains(i))
                 {
                     newAutomaton.IndexesStarts.Add(i);
@@ -102,12 +94,11 @@ namespace Automat2
                     if (automaton.IndexesFinals.Contains(originalIndex))
                     {
                         newAutomaton.IndexesFinals.Add(i);
-                        break; // достаточно одного конечного состояния в замыкании
+                        break; 
                     }
                 }
             }
 
-            // Инициализируем все переходы только для валидных сигналов
             foreach (var newState in newAutomaton.States)
             {
                 foreach (var input in validInputs)
@@ -125,21 +116,17 @@ namespace Automat2
                 {
                     var reachableStates = new HashSet<string>();
 
-                    // Для каждого состояния в ε-замыкании
                     foreach (var closureState in closures[originalState])
                     {
-                        // Ищем переходы по текущему символу
                         if (automaton.Transitions.TryGetValue((closureState, input), out var transitions))
                         {
                             foreach (var nextState in transitions)
                             {
-                                // Добавляем все состояния из ε-замыкания целевого состояния
                                 reachableStates.UnionWith(closures[nextState]);
                             }
                         }
                     }
 
-                    // Преобразуем имена состояний в новые
                     var newReachableStates = reachableStates
                         .Select(state => stateRenaming[state])
                         .ToList();
@@ -149,16 +136,10 @@ namespace Automat2
             }
 
             _console.WriteColoredLine("=== АВТОМАТ БЕЗ ε-ПЕРЕХОДОВ ===", _console.HighlightColor);
-            _console.WriteColoredLine("Переименование состояний:", _console.TextColor);
-            foreach (var rename in stateRenaming)
-            {
-                _console.WriteColoredLine($"  {rename.Key} -> {rename.Value}", _console.TextColor);
-            }
             Console.WriteLine();
 
             DisplayTransitionTable(newAutomaton);
 
-            // Выводим информацию о начальных и конечных состояниях
             _console.WriteColoredLine("НАЧАЛЬНЫЕ СОСТОЯНИЯ:", _console.HighlightColor);
             foreach (var startIndex in newAutomaton.IndexesStarts)
             {
@@ -174,11 +155,8 @@ namespace Automat2
             return newAutomaton;
         }
 
-        // Шаг 3: Детерминизация автомата
-        // Шаг 3: Детерминизация автомата
         public AutomatonInput Determinize(AutomatonInput automaton)
         {
-            // Убираем ε из входных сигналов, так как ε-переходы уже устранены
             var validInputs = automaton.Inputs.Where(s => s != "e").ToList();
 
             var determinized = new AutomatonInput
@@ -187,14 +165,11 @@ namespace Automat2
                 Transitions = new Dictionary<(string, string), List<string>>()
             };
 
-            // Начальное состояние - множество из исходного начального состояния
             var initialState = new HashSet<string> { automaton.States[0] };
 
-            // Используем HashSet с компаратором для сравнения по содержимому
             var stateSets = new Dictionary<string, HashSet<string>>();
             var stateNames = new Dictionary<HashSet<string>, string>(HashSet<string>.CreateSetComparer());
 
-            // Генерируем имена состояний в алфавитном порядке
             char currentChar = 'A';
             string GetStateName(HashSet<string> set)
             {
@@ -222,12 +197,10 @@ namespace Automat2
                 {
                     var nextSet = new HashSet<string>();
 
-                    // Для каждого состояния в текущем множестве
                     foreach (var state in currentSet)
                     {
                         if (automaton.Transitions.TryGetValue((state, input), out var transitions))
                         {
-                            // Добавляем ВСЕ состояния, в которые можно перейти
                             foreach (var nextState in transitions)
                             {
                                 nextSet.Add(nextState);
@@ -240,7 +213,6 @@ namespace Automat2
                         var nextStateName = GetStateName(nextSet);
                         determinized.Transitions[(currentStateName, input)] = new List<string> { nextStateName };
 
-                        // Если это новое множество, добавляем в очередь для обработки
                         if (!determinized.Transitions.TryGetValue((nextStateName, input), out var strings))
                         {
                             queue.Enqueue(nextSet);
@@ -248,47 +220,40 @@ namespace Automat2
                     }
                     else
                     {
-                        // Нет переходов - пустое множество
                         determinized.Transitions[(currentStateName, input)] = new List<string>();
                     }
                 }
             }
 
-            // Определяем начальное и конечные состояния для детерминизированного автомата
             determinized.IndexesStarts.Clear();
             determinized.IndexesFinals.Clear();
 
-            // Начальное состояние - то, которое содержит исходное начальное состояние
             for (int i = 0; i < determinized.States.Count; i++)
             {
                 var stateName = determinized.States[i];
                 var stateSet = stateSets[stateName];
 
-                // Если множество содержит исходное начальное состояние, то это начальное состояние
                 if (stateSet.Contains(automaton.States[0]))
                 {
                     determinized.IndexesStarts.Add(i);
                 }
 
-                // Если множество содержит хотя бы одно из исходных конечных состояний, то это конечное состояние
                 foreach (var finalIndex in automaton.IndexesFinals)
                 {
                     if (finalIndex < automaton.States.Count && stateSet.Contains(automaton.States[finalIndex]))
                     {
                         determinized.IndexesFinals.Add(i);
-                        break; // достаточно одного совпадения
+                        break; 
                     }
                 }
             }
 
-            // Сортируем состояния
             determinized.States = determinized.States.OrderBy(s => s).ToList();
 
             _console.WriteColoredLine("=== ДЕТЕРМЕНИЗИРОВАННЫЙ АВТОМАТ ===", _console.HighlightColor);
             DisplayTransitionTable(determinized);
             DisplayStateSets(stateSets);
 
-            // Выводим информацию о начальных и конечных состояниях
             _console.WriteColoredLine("НАЧАЛЬНЫЕ СОСТОЯНИЯ:", _console.HighlightColor);
             foreach (var startIndex in determinized.IndexesStarts)
             {

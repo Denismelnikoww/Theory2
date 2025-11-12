@@ -26,7 +26,6 @@
         {
             changed = false;
 
-            // Собираем ВСЕ переходы из ВСЕХ узлов
             var allTransitions = new List<(Node From, Node To, string Expr)>();
 
             foreach (var node in _automaton.Nodes)
@@ -40,17 +39,14 @@
                 }
             }
 
-            // Обрабатываем первый найденный сложный переход
             foreach (var (from, to, expr) in allTransitions)
             {
-                // Удаляем старый переход перед обработкой
                 from.Transitions.RemoveAll(t => t.To == to && t.Expression == expr);
 
                 ProcessTransition(from, to, expr);
                 changed = true;
                 _automaton.AddStep($"Обработка перехода {from.Name} -> {to.Name} с выражением '{expr}'");
 
-                // Прерываем после обработки одного перехода, чтобы начать новую итерацию
                 break;
             }
         }
@@ -61,7 +57,6 @@
     {
         expr = expr.Trim();
 
-        // Сначала убираем лишние скобки (это должно быть первым!)
         if (IsEnclosedInParens(expr))
         {
             var inner = expr.Substring(1, expr.Length - 2);
@@ -69,7 +64,6 @@
             return;
         }
 
-        // Затем проверяем на объединение (плюс) - только на верхнем уровне
         var unionParts = SplitByTopLevelUnion(expr);
         if (unionParts.Count > 1)
         {
@@ -77,7 +71,6 @@
             return;
         }
 
-        // Затем проверяем на плюс Клини
         if (expr.EndsWith("^"))
         {
             var inner = expr.Substring(0, expr.Length - 1);
@@ -85,7 +78,6 @@
             return;
         }
 
-        // Затем проверяем на звезду Клини
         if (expr.EndsWith("*"))
         {
             var inner = expr.Substring(0, expr.Length - 1);
@@ -93,9 +85,6 @@
             return;
         }
 
-
-
-        // Наконец, проверяем на конкатенацию
         var concatParts = SplitByConcatenation(expr);
         if (concatParts.Count > 1)
         {
@@ -103,7 +92,6 @@
             return;
         }
 
-        // Если ничего не применилось, оставляем как есть
         from.AddTransition(to, expr);
     }
 
@@ -126,25 +114,19 @@
                 level--;
             }
 
-            // Разбиваем только если уровень = 0 И это плюс И плюс не является частью оператора
             if (c == '+' && level == 0)
             {
-                // Проверяем контекст - плюс должен быть окружен пробелами или быть на границах
                 bool isOperator = true;
 
-                // Проверяем левый контекст
                 if (i > 0)
                 {
                     char left = expr[i - 1];
-                    // Если слева буква/цифра/скобка/оператор - то это вероятно оператор объединения
                     isOperator = (char.IsLetterOrDigit(left) || left == ')' || left == '^' || left == '*' || char.IsWhiteSpace(left));
                 }
 
-                // Проверяем правый контекст
                 if (i < expr.Length - 1)
                 {
                     char right = expr[i + 1];
-                    // Если справа буква/цифра/скобка/пробел - то это оператор объединения
                     isOperator = isOperator && (char.IsLetterOrDigit(right) || right == '(' || char.IsWhiteSpace(right));
                 }
 
@@ -181,13 +163,11 @@
 
             if (char.IsLetterOrDigit(expr[i]))
             {
-                // Обрабатываем одиночные символы
                 parts.Add(expr[i].ToString());
                 i++;
             }
             else if (expr[i] == '(')
             {
-                // Обрабатываем выражение в скобках
                 int level = 1;
                 int start = i;
                 i++;
@@ -204,21 +184,18 @@
             }
             else if (expr[i] == '^' || expr[i] == '*')
             {
-                // Операторы - добавляем к предыдущей части
                 if (parts.Count > 0)
                 {
                     parts[parts.Count - 1] += expr[i];
                 }
                 else
                 {
-                    // Если оператор в начале - добавляем как отдельную часть
                     parts.Add(expr[i].ToString());
                 }
                 i++;
             }
             else
             {
-                // Другие символы (например, + уже обработаны на уровне объединения)
                 i++;
             }
         }
@@ -232,14 +209,12 @@
         if (string.IsNullOrEmpty(s) || s.Length < 2 || s[0] != '(' || s[^1] != ')')
             return false;
 
-        // Проверяем, что все выражение заключено в сбалансированные скобки
         int level = 0;
         for (int i = 0; i < s.Length; i++)
         {
             if (s[i] == '(') level++;
             else if (s[i] == ')') level--;
 
-            // Если уровень стал 0 до конца строки - это не полностью заключенное выражение
             if (level == 0 && i < s.Length - 1)
                 return false;
         }
@@ -280,9 +255,9 @@
     {
         var middle = _automaton.CreateNode();
 
-        from.AddTransition(middle, inner);     // Прямой переход
-        middle.AddTransition(to, "ε");         // ε переход в конечное состояние
-        middle.AddTransition(middle, inner);   // Цикл с внутренним выражением
+        from.AddTransition(middle, inner);     
+        middle.AddTransition(to, "ε");         
+        middle.AddTransition(middle, inner);   
     }
 
     private bool IsSimpleSymbol(string s)
