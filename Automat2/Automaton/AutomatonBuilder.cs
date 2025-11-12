@@ -7,8 +7,8 @@
         _automaton = new Automaton();
         var start = _automaton.CreateNode();
         var final = _automaton.CreateNode();
-        _automaton.Start = start;
-        _automaton.Final = final;
+        start.IsStart = true;
+        final.IsFinal = true;
 
         start.AddTransition(final, expression);
 

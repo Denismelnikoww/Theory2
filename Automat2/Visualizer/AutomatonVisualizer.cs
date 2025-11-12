@@ -39,24 +39,29 @@ public class AutomatonVisualizer
             writer.WriteLine($"  label=\"Шаг {stepNumber}: {step.Comment}\";");
 
             // Находим начальный и конечный узлы в snapshot по ИМЕНАМ из StepSnapshot
-            var startNodeInStep = step.Nodes.FirstOrDefault(n => n.Name == step.StartStateName);
-            var finalNodeInStep = step.Nodes.FirstOrDefault(n => n.Name == step.FinalStateName);
+            var startNodeInSteps = step.Nodes.Where(n => n.IsStart);
+            var finalNodeInSteps = step.Nodes.Where(n => n.IsFinal);
 
-            // Специальные стили для начального и конечного состояний
-            if (startNodeInStep != null)
+            if (startNodeInSteps != null && startNodeInSteps.Count() > 0)
             {
-                writer.WriteLine($"  {startNodeInStep.Name} [label=\"{startNodeInStep.Name}\", shape=doublecircle, style=bold, color=blue];");
+                foreach (var node in startNodeInSteps)
+                {
+                    writer.WriteLine($"  {node.Name} [label=\"{node.Name}\", shape=doublecircle, style=bold, color=blue];");
+                }
             }
 
-            if (finalNodeInStep != null)
+            if (finalNodeInSteps != null && finalNodeInSteps.Count() > 0)
             {
-                writer.WriteLine($"  {finalNodeInStep.Name} [label=\"{finalNodeInStep.Name}\", shape=doublecircle, peripheries=2, style=bold, color=red];");
+                foreach (var node in finalNodeInSteps)
+                {
+                    writer.WriteLine($"  {node.Name} [label=\"{node.Name}\", shape=doublecircle, peripheries=2, style=bold, color=red];");
+                }
             }
 
             // Обычные узлы (которые не являются начальными или конечными)
             foreach (var node in step.Nodes)
             {
-                if (node != startNodeInStep && node != finalNodeInStep)
+                if (!node.IsFinal && !node.IsStart)
                 {
                     writer.WriteLine($"  {node.Name} [label=\"{node.Name}\", shape=circle];");
                 }

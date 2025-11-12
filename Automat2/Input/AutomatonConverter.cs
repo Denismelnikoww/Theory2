@@ -1,4 +1,5 @@
-﻿using Automat2;
+﻿using System.Xml.Linq;
+using Automat2;
 using Automat2.Input;
 
 public class AutomatonConverter
@@ -9,18 +10,22 @@ public class AutomatonConverter
 
         // Создаем узлы для всех состояний
         var nodeMap = new Dictionary<string, Node>();
-        foreach (var state in input.States)
+        for (int i = 0; i < input.States.Count; i++)
         {
+            var state = input.States[i];
             var node = automaton.CreateNode();
             node.Name = state; // Переопределяем имя на то, что было введено
             nodeMap[state] = node;
-        }
 
-        // Устанавливаем начальное и конечное состояния по ИМЕНАМ
-        if (input.States.Count > 0)
-        {
-            automaton.Start = nodeMap[input.States[0]]; // Первое состояние - стартовое
-            automaton.Final = nodeMap[input.States[input.States.Count - 1]]; // Последнее - финальное
+            // Устанавливаем начальные и конечные состояния по индексам
+            if (input.IndexesStarts.Contains(i))
+            {
+                node.IsStart = true;
+            }
+            if (input.IndexesFinals.Contains(i))
+            {
+                node.IsFinal = true; // Исправлено: было IsFalse, должно быть IsFinal
+            }
         }
 
         // Создаем переходы
@@ -54,8 +59,14 @@ public class AutomatonConverter
 
         console.WriteColoredLine("=== ПРЕОБРАЗОВАНИЕ МАТРИЦЫ В АВТОМАТ ===", console.HighlightColor);
         console.WriteColoredLine($"Исходные состояния: {string.Join(", ", input.States)}", console.TextColor);
-        console.WriteColoredLine($"Начальное состояние: {automaton.Start.Name}", console.SuccessColor);
-        console.WriteColoredLine($"Финальное состояние: {automaton.Final.Name}", console.SuccessColor);
+
+        // Показываем все начальные состояния
+        var startStates = automaton.Nodes.Where(n => n.IsStart).Select(n => n.Name);
+        console.WriteColoredLine($"Начальные состояния: {string.Join(", ", startStates)}", console.SuccessColor);
+
+        // Показываем все конечные состояния
+        var finalStates = automaton.Nodes.Where(n => n.IsFinal).Select(n => n.Name);
+        console.WriteColoredLine($"Конечные состояния: {string.Join(", ", finalStates)}", console.SuccessColor);
 
         console.WriteColoredLine("\nПОСТРОЕННЫЕ ПЕРЕХОДЫ:", console.HighlightColor);
         foreach (var node in automaton.Nodes)

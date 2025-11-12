@@ -1,7 +1,5 @@
 ﻿public class Automaton
 {
-    public Node Start { get; set; }
-    public Node Final { get; set; }
     public List<Node> Nodes { get; set; } = new List<Node>();
     public List<StepSnapshot> StepHistory { get; set; } = new List<StepSnapshot>();
 
@@ -25,7 +23,9 @@
         foreach (var node in Nodes)
         {
             var copiedNode = new Node(node.Id);
-            copiedNode.Name = node.Name; // Сохраняем имя!
+            copiedNode.Name = node.Name;
+            copiedNode.IsStart = node.IsStart;
+            copiedNode.IsFinal = node.IsFinal;
             nodeMap[node.Id] = copiedNode;
             copiedNodes.Add(copiedNode);
         }
@@ -44,21 +44,25 @@
         }
 
         // Передаем имена начального и конечного состояний
-        var snapshot = new StepSnapshot(_stepCounter++, copiedNodes, comment, Start?.Name, Final?.Name);
+        var snapshot = new StepSnapshot(_stepCounter++, copiedNodes, comment);
         StepHistory.Add(snapshot);
     }
 
     public bool ProcessInput(string input)
     {
-        if (Start == null)
+        var startNodes = Nodes.Where(n => n.IsStart).ToList();
+        var finalNodes = Nodes.Where(n => n.IsFinal).ToList();
+
+        if (startNodes.Count == 0)
             throw new InvalidOperationException("Начальное состояние не установлено");
-        if (Final == null)
+        if (finalNodes.Count == 0)
             throw new InvalidOperationException("Финальное состояние не установлено");
 
         Console.WriteLine($"Обработка входной строки: '{input}'");
         AddStep($"Начало обработки строки: '{input}'");
 
-        Node currentState = Start;
+        // Используем первое начальное состояние как стартовое
+        Node currentState = startNodes[0];
         int position = 0;
 
         foreach (char symbol in input)
@@ -93,21 +97,16 @@
         }
 
         // Проверяем, находимся ли в финальном состоянии после обработки всей строки
-        bool accepted = currentState == Final;
+        bool accepted = finalNodes.Contains(currentState);
 
         Console.WriteLine($"Результат: строка {(accepted ? "ПРИНЯТА" : "ОТВЕРГНУТА")}");
-        Console.WriteLine($"Конечное состояние: '{currentState.Name}', Финальное состояние: '{Final.Name}'");
+        Console.WriteLine($"Конечное состояние: '{currentState.Name}', Финальные состояния: {string.Join(", ", finalNodes.Select(n => n.Name))}");
 
         AddStep(accepted ? "Строка принята - достигнуто финальное состояние" : "Строка отвергнута - не достигнуто финальное состояние");
 
         return accepted;
     }
 
-    /// <summary>
-    /// Обрабатывает несколько входных строк и возвращает результаты для каждой
-    /// </summary>
-    /// <param name="inputs">Массив входных строк</param>
-    /// <returns>Словарь с результатами для каждой строки</returns>
     public Dictionary<string, bool> ProcessMultipleInputs(string[] inputs)
     {
         var results = new Dictionary<string, bool>();
@@ -129,9 +128,6 @@
         return results;
     }
 
-    /// <summary>
-    /// Проверяет, соответствует ли входной символ выражению перехода
-    /// </summary>
     private bool MatchesTransition(string input, string transitionExpr)
     {
         // Простая реализация - проверка точного совпадения
@@ -168,23 +164,22 @@
 
         return input == transitionExpr;
     }
-
-    public void PrintProcessingStats(string[] testInputs)
+    
+    public Node Start
     {
-        Console.WriteLine("=== СТАТИСТИКА ОБРАБОТКИ ===");
-        var results = ProcessMultipleInputs(testInputs);
-
-        int accepted = results.Count(r => r.Value);
-        int rejected = results.Count(r => !r.Value);
-
-        Console.WriteLine($"Всего строк: {testInputs.Length}");
-        Console.WriteLine($"Принято: {accepted}");
-        Console.WriteLine($"Отвергнуто: {rejected}");
-
-        Console.WriteLine("\nДетали:");
-        foreach (var result in results)
+        get { return Nodes.FirstOrDefault(n => n.IsStart); }
+        set
         {
-            Console.WriteLine($"  '{result.Key}' -> {(result.Value ? "ПРИНЯТА" : "ОТВЕРГНУТА")}");
+            value.IsStart = true;
+        }
+    }
+
+    public Node Final
+    {
+        get { return Nodes.FirstOrDefault(n => n.IsFinal); }
+        set
+        {
+            value.IsFinal = true;
         }
     }
 }

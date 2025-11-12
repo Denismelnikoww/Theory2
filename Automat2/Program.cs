@@ -93,7 +93,9 @@ namespace Automat2
             {
                 Inputs = new List<string> { "0", "1", "e" },
                 States = new List<string> { "q0", "q1", "qf" },
-                Transitions = new Dictionary<(string, string), List<string>>()
+                Transitions = new Dictionary<(string, string), List<string>>(),
+                IndexesFinals = {2},
+                IndexesStarts = {0}
             };
 
             foreach (var state in automaton.States)
