@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Automat2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7395b3815cc82bea05f30defeb155c0350d5ba8c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2138b8e43ee6b2c86fb9408420b1655f4917603")]
 [assembly: System.Reflection.AssemblyProductAttribute("Automat2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Automat2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
