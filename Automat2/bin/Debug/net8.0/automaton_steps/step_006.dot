@@ -1,0 +1,22 @@
+digraph G {
+  rankdir=LR;
+  node [shape = circle];
+  labelloc="t";
+  label="Шаг 6: Обработка перехода q0 -> q4 с выражением '(ab)'";
+  q0 [label="q0", shape=doublecircle, style=bold, color=blue];
+  q1 [label="q1", shape=doublecircle, peripheries=2, style=bold, color=red];
+  q2 [label="q2", shape=circle];
+  q3 [label="q3", shape=circle];
+  q4 [label="q4", shape=circle];
+  q5 [label="q5", shape=circle];
+  q0 -> q2 [label="ε"];
+  q0 -> q5 [label="(a+b*)"];
+  q0 -> q4 [label="ab"];
+  q2 -> q1 [label="ε"];
+  q2 -> q2 [label="a"];
+  q3 -> q1 [label="a"];
+  q4 -> q1 [label="ε"];
+  q4 -> q4 [label="(ab)"];
+  q5 -> q3 [label="ε"];
+  q5 -> q5 [label="(a+b*)"];
+}

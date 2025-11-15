@@ -40,7 +40,6 @@ namespace Automat2
             {
                 var current = stack.Pop();
 
-                // Ищем все ε-переходы из текущего состояния
                 if (automaton.Transitions.TryGetValue((current, "e"), out var epsilonTransitions))
                 {
                     foreach (var nextState in epsilonTransitions)
@@ -86,7 +85,8 @@ namespace Automat2
                     newAutomaton.IndexesStarts.Add(i);
                 }
 
-                // Если в ε-замыкании состояния есть хотя бы одно конечное состояние, то новое состояние конечное
+                // есл в е-замыкании состояния есть 1> конечное состояние,
+                // то новое состояние конечное
                 var closure = closures[originalState];
                 foreach (var stateInClosure in closure)
                 {
@@ -107,7 +107,7 @@ namespace Automat2
                 }
             }
 
-            // Строим новые переходы через ε-замыкания
+            // строим переходы через е-замыкания
             foreach (var originalState in automaton.States)
             {
                 var newStateName = stateRenaming[originalState];

@@ -18,6 +18,8 @@
             InputInputSignals();
             InputStates();
             InputTransitions();
+            InputInitialStates(); // Новый метод для начальных состояний
+            InputFinalStates();   // Новый метод для конечных состояний
 
             return _automaton;
         }
@@ -108,6 +110,118 @@
             }
 
             _console.WriteColoredLine("Ввод переходов завершен!", _console.SuccessColor);
+        }
+
+        private void InputInitialStates()
+        {
+            _console.WriteColoredLine("=== ВЫБОР НАЧАЛЬНЫХ СОСТОЯНИЙ ===", _console.HighlightColor);
+            _console.WriteColoredLine("Выберите начальные состояния (может быть несколько):", _console.TextColor);
+
+            SelectStates(_automaton.States, _automaton.IndexesStarts, "начальных");
+        }
+
+        private void InputFinalStates()
+        {
+            _console.WriteColoredLine("=== ВЫБОР КОНЕЧНЫХ СОСТОЯНИЙ ===", _console.HighlightColor);
+            _console.WriteColoredLine("Выберите конечные состояния (может быть несколько):", _console.TextColor);
+
+            SelectStates(_automaton.States, _automaton.IndexesFinals, "конечных");
+        }
+
+        private void SelectStates(List<string> states, List<int> selectedIndexes, string stateType)
+        {
+            int selectedIndex = 0;
+            bool selecting = true;
+            var selectedStates = new List<string>(selectedIndexes.Select(i => states[i]));
+
+            while (selecting)
+            {
+                Console.Clear();
+                _console.WriteColoredLine($"ВЫБОР {stateType.ToUpper()} СОСТОЯНИЙ", _console.HighlightColor);
+                _console.WriteColoredLine("Используйте стрелки для навигации, Enter - выбрать/снять выделение, ✓ - завершить выбор",
+                                        _console.TextColor);
+                Console.WriteLine();
+
+                // Отображаем все состояния
+                for (int i = 0; i < states.Count; i++)
+                {
+                    var state = states[i];
+                    bool isSelected = selectedStates.Contains(state);
+
+                    if (i == selectedIndex)
+                    {
+                        var marker = isSelected ? "[✓]" : "[ ]";
+                        _console.WriteColored($"{marker} {state}", _console.HighlightColor);
+                    }
+                    else
+                    {
+                        var marker = isSelected ? "[✓]" : "[ ]";
+                        Console.Write($"{marker} {state}");
+                    }
+                    Console.WriteLine();
+                }
+
+                // Отображаем вариант "Завершить выбор"
+                var finishIndex = states.Count;
+                if (selectedIndex == finishIndex)
+                {
+                    _console.WriteColoredLine("[✓] Завершить выбор", _console.HighlightColor);
+                }
+                else
+                {
+                    Console.WriteLine("[ ] Завершить выбор");
+                }
+
+                Console.WriteLine();
+                _console.WriteColoredLine($"Выбрано {stateType} состояний: {(selectedStates.Count == 0 ? "нет" : string.Join(", ", selectedStates))}",
+                                        _console.SuccessColor);
+
+                var key = Console.ReadKey(true).Key;
+
+                switch (key)
+                {
+                    case ConsoleKey.UpArrow:
+                        selectedIndex = (selectedIndex - 1 + states.Count + 1) % (states.Count + 1);
+                        break;
+                    case ConsoleKey.DownArrow:
+                        selectedIndex = (selectedIndex + 1) % (states.Count + 1);
+                        break;
+                    case ConsoleKey.Enter:
+                        if (selectedIndex < states.Count)
+                        {
+                            // Выбор/отмена выбора состояния
+                            var stateToToggle = states[selectedIndex];
+                            if (selectedStates.Contains(stateToToggle))
+                            {
+                                selectedStates.Remove(stateToToggle);
+                            }
+                            else
+                            {
+                                selectedStates.Add(stateToToggle);
+                            }
+                        }
+                        else
+                        {
+                            // Завершение выбора
+                            selecting = false;
+                        }
+                        break;
+                    case ConsoleKey.Escape:
+                        selecting = false;
+                        break;
+                }
+            }
+
+            // Сохраняем выбранные индексы
+            selectedIndexes.Clear();
+            foreach (var state in selectedStates)
+            {
+                selectedIndexes.Add(states.IndexOf(state));
+            }
+
+            _console.WriteColoredLine($"Сохранено {stateType} состояний: {(selectedStates.Count == 0 ? "нет" : string.Join(", ", selectedStates))}",
+                                    _console.SuccessColor);
+            _console.Pause("Нажмите любую клавишу чтобы продолжить...");
         }
 
         private void DisplayTransitionTable(int selectedRow, int selectedCol)
@@ -277,6 +391,16 @@
 
             _console.WriteColoredLine($"Входные сигналы: {string.Join(", ", automaton.Inputs)}", _console.TextColor);
             _console.WriteColoredLine($"Состояния: {string.Join(", ", automaton.States)}", _console.TextColor);
+
+            // Начальные состояния
+            var initialStates = automaton.IndexesStarts.Select(i => automaton.States[i]).ToList();
+            _console.WriteColoredLine($"Начальные состояния: {(initialStates.Count == 0 ? "нет" : string.Join(", ", initialStates))}",
+                                    _console.TextColor);
+
+            // Конечные состояния
+            var finalStates = automaton.IndexesFinals.Select(i => automaton.States[i]).ToList();
+            _console.WriteColoredLine($"Конечные состояния: {(finalStates.Count == 0 ? "нет" : string.Join(", ", finalStates))}",
+                                    _console.TextColor);
 
             _console.WriteColoredLine("\nПЕРЕХОДЫ:", _console.HighlightColor);
             foreach (var state in automaton.States)

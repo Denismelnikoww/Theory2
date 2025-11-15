@@ -5,87 +5,87 @@ namespace Automat2
 {
     partial class Program
     {
-        //    static void Main(string[] args)
-        //    {
-        //        var builder = new AutomatonBuilder();
-        //        var automaton = builder.Build("a* + (a+b*)^ a + (ab)^");
-
-        //        var visualizer = new AutomatonVisualizer();
-        //        visualizer.RenderSteps(automaton);
-        //    }
-
         static void Main(string[] args)
         {
-            var consoleHelper = new ConsoleHelper();
-            var matrixInput = new MatrixInputHelper(consoleHelper);
-            var converter = new AutomatonConverter();
-            var determinizer = new AutomatonDeterminizer(consoleHelper);
+            var builder = new AutomatonBuilder();
+            var automaton = builder.Build("a* + (a+b*)^ a + (ab)^");
+
             var visualizer = new AutomatonVisualizer();
-            var automatonInput = new AutomatonInput();
-            var flagAutomaton = false;
-
-
-            Automaton automaton = new();
-
-            var menu = new Dictionary<string, Action>
-            {
-                ["Ввести автомат матрицей"] = () =>
-                {
-                    automatonInput = matrixInput.InputAutomatonMatrix();
-                    matrixInput.DisplayAutomatonInfo(automatonInput);
-                    consoleHelper.Pause();
-
-                    automaton = converter.ConvertToAutomaton(automatonInput);
-                    converter.DisplayConversionInfo(automatonInput, automaton);
-                    consoleHelper.Pause();
-
-                    visualizer.RenderSteps(automaton);
-                    flagAutomaton = true;
-                },
-                ["Детерминизировать автомат"] = () =>
-                {
-                    if (!flagAutomaton)
-                        return;
-
-                    var automatonWithoutEpsilon = determinizer.RemoveEpsilonTransitions(automatonInput, determinizer.BuildEpsilonClosures(automatonInput));
-                    visualizer.RenderSteps(
-                        converter.ConvertToAutomaton(automatonWithoutEpsilon),
-                        "automatonWithoutEpsilon",
-                        deleteDirectory: false);
-                    consoleHelper.Pause();
-
-                    var determinizedAutomaton = determinizer.Determinize(automatonWithoutEpsilon);
-                    visualizer.RenderSteps(
-                        converter.ConvertToAutomaton(determinizedAutomaton),
-                        "determinized",
-                        deleteDirectory: false);
-                    consoleHelper.Pause();
-                    automaton = converter.ConvertToAutomaton(determinizedAutomaton);
-                },
-                ["Мой вариант"] = () =>
-                    {
-                        automatonInput = CreateAutomatonInput();
-                        matrixInput.DisplayAutomatonInfo(automatonInput);
-                        consoleHelper.Pause();
-
-                        automaton = converter.ConvertToAutomaton(automatonInput);
-                        converter.DisplayConversionInfo(automatonInput, automaton);
-                        consoleHelper.Pause();
-
-                        visualizer.RenderSteps(automaton);
-                        flagAutomaton = true;
-                    },
-                ["Подать сигнал"] = () =>
-                {
-                    if (!flagAutomaton)
-                        return;
-
-                    automaton.ProcessInput(consoleHelper.ReadString("Введите входной сигнал \n>> "));
-                }
-            };
-
-            consoleHelper.Menu(menu, "ГЛАВНОЕ МЕНЮ - ТЕОРИЯ АВТОМАТОВ");
+            visualizer.RenderSteps(automaton);
         }
+
+        //static void Main(string[] args)
+        //{
+        //    var consoleHelper = new ConsoleHelper();
+        //    var matrixInput = new MatrixInputHelper(consoleHelper);
+        //    var converter = new AutomatonConverter();
+        //    var determinizer = new AutomatonDeterminizer(consoleHelper);
+        //    var visualizer = new AutomatonVisualizer();
+        //    var automatonInput = new AutomatonInput();
+        //    var flagAutomaton = false;
+
+
+        //    Automaton automaton = new();
+
+        //    var menu = new Dictionary<string, Action>
+        //    {
+        //        ["Ввести автомат матрицей"] = () =>
+        //        {
+        //            automatonInput = matrixInput.InputAutomatonMatrix();
+        //            matrixInput.DisplayAutomatonInfo(automatonInput);
+        //            consoleHelper.Pause();
+
+        //            automaton = converter.ConvertToAutomaton(automatonInput);
+        //            converter.DisplayConversionInfo(automatonInput, automaton);
+        //            consoleHelper.Pause();
+
+        //            visualizer.RenderSteps(automaton);
+        //            flagAutomaton = true;
+        //        },
+        //        ["Детерминизировать автомат"] = () =>
+        //        {
+        //            if (!flagAutomaton)
+        //                return;
+
+        //            var automatonWithoutEpsilon = determinizer.RemoveEpsilonTransitions(automatonInput, determinizer.BuildEpsilonClosures(automatonInput));
+        //            visualizer.RenderSteps(
+        //                converter.ConvertToAutomaton(automatonWithoutEpsilon),
+        //                "automatonWithoutEpsilon",
+        //                deleteDirectory: false);
+        //            consoleHelper.Pause();
+
+        //            var determinizedAutomaton = determinizer.Determinize(automatonWithoutEpsilon);
+        //            visualizer.RenderSteps(
+        //                converter.ConvertToAutomaton(determinizedAutomaton),
+        //                "determinized",
+        //                deleteDirectory: false);
+        //            consoleHelper.Pause();
+        //            automaton = converter.ConvertToAutomaton(determinizedAutomaton);
+        //        },
+        //        ["Мой вариант"] = () =>
+        //            {
+        //                automatonInput = CreateAutomatonInput();
+        //                matrixInput.DisplayAutomatonInfo(automatonInput);
+        //                consoleHelper.Pause();
+
+        //                automaton = converter.ConvertToAutomaton(automatonInput);
+        //                converter.DisplayConversionInfo(automatonInput, automaton);
+        //                consoleHelper.Pause();
+
+        //                visualizer.RenderSteps(automaton);
+        //                flagAutomaton = true;
+        //            },
+        //        ["Подать сигнал"] = () =>
+        //        {
+        //            if (!flagAutomaton)
+        //                return;
+
+        //            automaton.ProcessInput(consoleHelper.ReadString("Введите входной сигнал \n>> "));
+        //        }
+        //    };
+
+        //    consoleHelper.Menu(menu, "ГЛАВНОЕ МЕНЮ - ТЕОРИЯ АВТОМАТОВ");
+        //}
 
         static AutomatonInput CreateAutomatonInput()
         {
